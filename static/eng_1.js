@@ -79,3 +79,52 @@ finishButton.addEventListener("click", () => {
 
     resultContainer.innerHTML = `Pareizo atbilžu skaits: ${correctCount} / ${sentences.length}`;
 });
+
+
+const spikerisPasswordInput = document.getElementById("spikerisPassword");
+        const showSpikerisButton = document.getElementById("showSpikerisButton");
+        const hideSpikerisButton = document.getElementById("hideSpikerisButton");
+        const notesContainer = document.getElementById("notes");
+
+        const atbildesPasswordInput = document.getElementById("atbildesPassword");
+        const showAtbildesButton = document.getElementById("showAtbildesButton");
+        const hideAtbildesButton = document.getElementById("hideAtbildesButton");
+        const answersContainer = document.getElementById("answers");
+
+        // Rāda špikera saturu
+        showSpikerisButton.addEventListener("click", () => {
+            const password = spikerisPasswordInput.value;
+            if (password === "spikeris") {
+                notesContainer.style.display = "block";
+                showSpikerisButton.style.display = "none";
+                hideSpikerisButton.style.display = "block";
+            } else {
+                alert("Nepareiza parole!");
+            }
+        });
+
+        // Paslēpj špikera saturu
+        hideSpikerisButton.addEventListener("click", () => {
+            notesContainer.style.display = "none";
+            showSpikerisButton.style.display = "block";
+            hideSpikerisButton.style.display = "none";
+        });
+
+        // Rāda atbilžu saturu
+        showAtbildesButton.addEventListener("click", () => {
+            const password = atbildesPasswordInput.value;
+            if (password === "atbildes") {
+                answersContainer.style.display = "block";
+                showAtbildesButton.style.display = "none";
+                hideAtbildesButton.style.display = "block";
+            } else {
+                alert("Nepareiza parole!");
+            }
+        });
+
+        // Paslēpj atbilžu saturu
+        hideAtbildesButton.addEventListener("click", () => {
+            answersContainer.style.display = "none";
+            showAtbildesButton.style.display = "block";
+            hideAtbildesButton.style.display = "none";
+        });

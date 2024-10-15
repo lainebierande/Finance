@@ -58,9 +58,8 @@
             background-color: #ba009e; /* Zils fons */
         }
 
-        .button:hover {
-            opacity: 0.8;
-        }
+       
+
 
         .input-container {
             display: flex;
@@ -78,7 +77,7 @@
 </head>
 <body>
     <h1>Angļu valoda</h1>
-    <a href="{{ url_for('angluvaloda.html') }}" class="button back">Atpakaļ</a>
+    <a href="{{ url_for('angluvaloda') }}" class="button back">Atpakaļ</a>
 
     <div class="container">
         <div class="left">
@@ -189,55 +188,6 @@
         </div>
     </div>
 
-    <script>
-        // Elementu atlasīšana
-        const spikerisPasswordInput = document.getElementById("spikerisPassword");
-        const showSpikerisButton = document.getElementById("showSpikerisButton");
-        const hideSpikerisButton = document.getElementById("hideSpikerisButton");
-        const notesContainer = document.getElementById("notes");
-
-        const atbildesPasswordInput = document.getElementById("atbildesPassword");
-        const showAtbildesButton = document.getElementById("showAtbildesButton");
-        const hideAtbildesButton = document.getElementById("hideAtbildesButton");
-        const answersContainer = document.getElementById("answers");
-
-        // Rāda špikera saturu
-        showSpikerisButton.addEventListener("click", () => {
-            const password = spikerisPasswordInput.value;
-            if (password === "paula") {
-                notesContainer.style.display = "block";
-                showSpikerisButton.style.display = "none";
-                hideSpikerisButton.style.display = "block";
-            } else {
-                alert("Nepareiza parole!");
-            }
-        });
-
-        // Paslēpj špikera saturu
-        hideSpikerisButton.addEventListener("click", () => {
-            notesContainer.style.display = "none";
-            showSpikerisButton.style.display = "block";
-            hideSpikerisButton.style.display = "none";
-        });
-
-        // Rāda atbilžu saturu
-        showAtbildesButton.addEventListener("click", () => {
-            const password = atbildesPasswordInput.value;
-            if (password === "paula") {
-                answersContainer.style.display = "block";
-                showAtbildesButton.style.display = "none";
-                hideAtbildesButton.style.display = "block";
-            } else {
-                alert("Nepareiza parole!");
-            }
-        });
-
-        // Paslēpj atbilžu saturu
-        hideAtbildesButton.addEventListener("click", () => {
-            answersContainer.style.display = "none";
-            showAtbildesButton.style.display = "block";
-            hideAtbildesButton.style.display = "none";
-        });
-    </script>
+    
 </body>
 </html>
