@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paula</title>
-    <link rel="stylesheet" href="static/css/styles.css">
-    <script src="static/js/script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>ČAU, PAULA!</h1>
         <div class="buttons">
-            <a href="{{ url_for('angluvaloda') }}" class="button">Angļu valoda</a>
+            <a href="{{ url_for('eng') }}" class="button">Angļu valoda</a>
         
         </div>
     </div>

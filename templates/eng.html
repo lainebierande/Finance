@@ -4,85 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Present Simple and Present Continues</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='eng_1.css') }}">
-    <script src="{{ url_for('static', filename='eng_1.js') }}" defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            display: flex;
-        }
-
-        .left, .middle, .right {
-            flex: 1;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .circle {
-            background-color: lightblue;
-            border-radius: 50%;
-            padding: 5px;
-        }
-
-        #notes, #answers {
-            display: none;
-        }
-
-        /* Stili pogām */
-        .button {
-            background-color: #ba009e; /* Zaļš fons */
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .back {
-            background-color: #ba009e; /* Zils fons */
-        }
-
-       
-
-
-        .input-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .input-container input {
-            flex: 1; /* Ievades lauks aizņem visu pieejamo platumu */
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px; /* Attālums starp ievadi un pogām */
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eng.css') }}">
+    <script src="{{ url_for('static', filename='js/eng.js') }}" defer></script>
+   
 </head>
 <body>
     <h1>Angļu valoda</h1>
-    <a href="{{ url_for('angluvaloda') }}" class="button back">Atpakaļ</a>
+    <a href="{{ url_for('home') }}" class="button back">Atpakaļ</a>
 
     <div class="container">
         <div class="left">
-            <h2>Spēle: Ievieto pareizo darbības vārdu</h2>
-            <p>Izvēlieties pareizo darbības vārdu un ievietojiet to teikumā.</p>
+            <b><p style="color:red;">* Ieraksti darbības vārdu pareizajā formā Present Simple vai Present Continues</p></b>
+            <p>* Kad vārds uzrakstīts nospied ENTER, ja vārds iekrāsojas zaļš, tad ir pareizi, ja sarkans- tad nē.</p>
+            <p>* Ja vēlies izmantot špikeri vai apskatīt pareizās atbildes, ir jāievada parole</p>
+<br><br>
             <div id="game">
                 <div id="sentences"></div>
                 <button id="finishButton" class="button">Finish</button>
@@ -91,11 +26,12 @@
         </div>
 
         <div class="middle">
-            <h2>Špikeris</h2>
+            <h2 style="color:rgb(91, 65, 236);text-align: center;">Špikeris</h2>
+            <br><br>
             <div class="input-container">
                 <input type="password" id="spikerisPassword" placeholder="Ievadi paroli" />
-                <button id="showSpikerisButton" class="button">Rādīt</button>
-                <button id="hideSpikerisButton" class="button" style="display: none;">Paslēpt</button>
+                <button id="showSpikerisButton" class="showtheory">Rādīt</button>
+                <button id="hideSpikerisButton" class="hidetheory" style="display: none;">Paslēpt</button>
             </div>
 
             <div id="notes">
@@ -146,12 +82,12 @@
         </div>
 
         <div class="right">
-            <h2>Atbildes</h2>
+            <h2 style="color:green;text-align: center;">Atbildes</h2><br><br>
             <div class="input-container">
                 <input type="password" id="atbildesPassword" placeholder="Ievadi paroli" />
-                <button id="showAtbildesButton" class="button">Rādīt</button>
-                <button id="hideAtbildesButton" class="button" style="display: none;">Paslēpt</button>
-            </div>
+                <button id="showAtbildesButton" class="showanswer">Rādīt</button>
+                <button id="hideAtbildesButton" class="hideanswer" style="display: none;">Paslēpt</button>
+            </div><br><br>
 
             <div id="answers">
                 <p>1. Atbilde: <span class="correct" style="color: green;">eat</span></p>

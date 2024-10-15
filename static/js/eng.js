@@ -1,3 +1,5 @@
+
+// Task
 const sentences = [
     { sentence: "1. I ___ (to eat) breakfast every morning.", correct: "eat" },
     { sentence: "2. She ___ (to go) to school by bus.", correct: "goes" },
@@ -37,14 +39,12 @@ const sentencesContainer = document.getElementById("sentences");
 const finishButton = document.getElementById("finishButton");
 const resultContainer = document.getElementById("result");
 
-// Pievienojam teikumus un ievades laukus
 sentences.forEach((item, index) => {
     const sentenceDiv = document.createElement("div");
     sentenceDiv.classList.add("sentence");
     sentenceDiv.innerHTML = item.sentence.replace("___", `<input type="text" id="input${index}" placeholder="ievietot vārdu" />`);
     sentencesContainer.appendChild(sentenceDiv);
 
-    // Pievienojam notikumu, lai pārbaudītu atbildi, kad nospiežam Enter
     const inputField = document.getElementById(`input${index}`);
     inputField.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
@@ -53,7 +53,7 @@ sentences.forEach((item, index) => {
     });
 });
 
-// Funkcija, kas pārbauda atbildi
+// Check answer
 function checkAnswer(inputField, correctAnswer) {
     const userInput = inputField.value.trim();
     const isCorrect = userInput.toLowerCase() === correctAnswer.toLowerCase();
@@ -66,7 +66,7 @@ function checkAnswer(inputField, correctAnswer) {
     }
 }
 
-// Poga "Finish" var tikt izņemta vai var palikt, ja vēlaties parādīt galīgos rezultātus
+// Results
 finishButton.addEventListener("click", () => {
     let correctCount = 0;
 
@@ -80,7 +80,7 @@ finishButton.addEventListener("click", () => {
     resultContainer.innerHTML = `Pareizo atbilžu skaits: ${correctCount} / ${sentences.length}`;
 });
 
-
+// passwords, hide and show content
 const spikerisPasswordInput = document.getElementById("spikerisPassword");
         const showSpikerisButton = document.getElementById("showSpikerisButton");
         const hideSpikerisButton = document.getElementById("hideSpikerisButton");
@@ -91,7 +91,6 @@ const spikerisPasswordInput = document.getElementById("spikerisPassword");
         const hideAtbildesButton = document.getElementById("hideAtbildesButton");
         const answersContainer = document.getElementById("answers");
 
-        // Rāda špikera saturu
         showSpikerisButton.addEventListener("click", () => {
             const password = spikerisPasswordInput.value;
             if (password === "spikeris") {
@@ -103,14 +102,12 @@ const spikerisPasswordInput = document.getElementById("spikerisPassword");
             }
         });
 
-        // Paslēpj špikera saturu
         hideSpikerisButton.addEventListener("click", () => {
             notesContainer.style.display = "none";
             showSpikerisButton.style.display = "block";
             hideSpikerisButton.style.display = "none";
         });
 
-        // Rāda atbilžu saturu
         showAtbildesButton.addEventListener("click", () => {
             const password = atbildesPasswordInput.value;
             if (password === "atbildes") {
@@ -122,7 +119,6 @@ const spikerisPasswordInput = document.getElementById("spikerisPassword");
             }
         });
 
-        // Paslēpj atbilžu saturu
         hideAtbildesButton.addEventListener("click", () => {
             answersContainer.style.display = "none";
             showAtbildesButton.style.display = "block";
